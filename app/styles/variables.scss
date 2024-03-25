@@ -1,0 +1,59 @@
+/* breakpoint */
+$breakpoint-sm: 23.4375rem;
+$breakpoint-md: 48rem;
+$breakpoint-lg: 80rem;
+$breakpoint-xl: 90rem;
+
+/* Color palette */
+
+$primaryColor: hsl(22, 65%, 57%);
+$secondaryColor: hsl(0, 0%, 6%);
+$lightgreyColor: hsl(0, 0%, 95%);
+$offwhiteColor: hsl(0, 0%, 98%);
+$accentColor: hsl(21, 94%, 75%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+
+/*
+
+h1 - 56px | 36px
+h2 - 40px | 28px
+h3 - 32px | 24px
+h4 - 28px | 28px
+h5 - 24px | 24px
+h6 - 18px
+
+*/
+
+$font-size-h1: clamp(2.25rem, 1.057rem + 5.089vw, 3.5rem);
+$font-size-h2: clamp(1.75rem, 1.034rem + 3.053vw, 2.5rem);
+$font-size-h3: clamp(1.5rem, 1.023rem + 2.036vw, 2rem);
+$font-size-h4: 1.75rem;
+$font-size-h5: 1.5rem;
+$font-size-h6: 1.125rem;
+
+$line-height-h1: 1.0357;
+$line-height-h2: 1.1;
+$line-height-h3: 1.125;
+$line-height-h4: 1.357;
+$line-height-h5: 1.357;
+$line-height-h6: 1.33;
+
+$letter-spacing-h1: .125rem;
+$letter-spacing-h2: .0938rem;
+$letter-spacing-h3: .0719rem;
+$letter-spacing-h4: .125rem;
+$letter-spacing-h5: .1062rem;
+$letter-spacing-h6: .0813rem;
+
+$font-size-overline: .875rem;
+$line-height-overline: 1.357;
+$letter-spacing-overline: .625rem;
+
+$font-size-subtitle: .8125rem;
+$line-height-subtitle: 1.923;
+$letter-spacing-subtitle: .0625rem;
+
+$font-size-body: .9375rem;
+$line-height-body: 1.67; /* Equivalent to 25px line-height */
+

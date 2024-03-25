@@ -1,0 +1,8 @@
+# import './fragments/fragments.graphql'
+# Query for Homepage components
+query Homepage {
+    homepage {
+        id
+        slug
+    }
+}
