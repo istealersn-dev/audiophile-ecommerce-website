@@ -1,0 +1,11 @@
+  query Homepage {
+    homepages {
+      components {
+        ...HeroFragment
+      }
+        slug
+        pageMeta {
+        ...MetaInfoFragment
+        }
+    }
+  }

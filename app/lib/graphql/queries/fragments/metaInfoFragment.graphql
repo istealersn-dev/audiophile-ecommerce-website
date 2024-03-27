@@ -1,0 +1,6 @@
+# pageMeta fragment for fetching Page Meta information
+fragment MetaInfoFragment on MetaInfo {
+  id
+  metaDescription
+  pageTitle
+}

@@ -1,0 +1,34 @@
+fragment HeroFragment on Hero {
+    id
+    heroImage {
+        id
+            desktopImage {
+                url
+                width
+                height
+                id
+            }
+            mobileImage {
+                width
+                url
+                id
+                height
+            }
+            tabletImage {
+                height
+                id
+                url
+                width
+            }
+    }
+    altText
+    description
+    heading
+    heroButton {
+        id
+        label
+        link
+        variant
+    }
+    overline
+}
