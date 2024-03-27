@@ -1,26 +1,24 @@
 import { breakpoints } from '@/app/lib/utils/breakpoints';
-import { HeroProps } from '@/app/lib/types';
-import { FC } from 'react';
+import { HeroFragment } from '@/app/lib/types';
 
-export const Hero: FC<HeroProps> = ({...HeroProps}
-) => {
-  const { small, medium, large } = HeroProps.heroImage.source;
+export const Hero = ({overline, heading, description, heroImage, altText, heroButton}: HeroFragment) => {
+  const { desktopImage, tabletImage, mobileImage } = heroImage;
   return (
     <section>
       <div className="hero">
         <div className="hero__image">
           <picture>
-            <source media={`(min-width: ${breakpoints.small})`} srcSet={small} />
-            <source media={`(min-width: ${breakpoints.medium})`} srcSet={medium} />
-            <source media={`(min-width: ${breakpoints.large})`} srcSet={large} />
-            <img src={large} alt={HeroProps.altText} />
+            <source media={`(min-width: ${breakpoints.large})`} srcSet={desktopImage.url} />    
+            <source media={`(min-width: ${breakpoints.medium})`} srcSet={tabletImage.url} />
+            <source media={`(min-width: ${breakpoints.small})`} srcSet={mobileImage.url} />
+            <img src={desktopImage.url} alt={altText} />
           </picture>
         </div>
         <div className="hero__content">
-            <span role='Overline'>{HeroProps.overline}</span>
-            <h1>{HeroProps.heading}</h1>
-            <p>{HeroProps.description}</p>
-            <a href={HeroProps.heroButton.link} className=''>{HeroProps.heroButton.label}</a>
+            <span role='Overline'>{overline}</span>
+            <h1>{heading}</h1>
+            <p>{description}</p>
+            <a href={heroButton.link} className=''>{heroButton.label}</a>
         </div>
       </div>
     </section>
