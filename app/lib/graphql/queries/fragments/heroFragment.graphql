@@ -1,5 +1,6 @@
 fragment HeroFragment on Hero {
     id
+    __typename
     heroImage {
         id
             desktopImage {

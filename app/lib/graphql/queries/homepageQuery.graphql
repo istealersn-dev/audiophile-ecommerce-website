@@ -2,6 +2,7 @@
     homepages {
       components {
         ...HeroFragment
+        ...CategoryFragment
       }
         slug
         pageMeta {

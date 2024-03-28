@@ -1,0 +1,23 @@
+fragment CategoryFragment on Category {
+    id
+    __typename
+    category {
+        id
+        __typename
+        categoryButton {
+            id
+            __typename
+            label
+            link
+            variant
+        }
+        categoryImage {
+            id
+            __typename
+            height
+            width
+            url
+        }
+        categoryName
+    }
+}

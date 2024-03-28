@@ -10,10 +10,12 @@ import { gql } from "graphql-tag";
 import homepageQuery from "./queries/homepageQuery.graphql";
 import heroFragment from "./queries/fragments/HeroFragment.graphql";
 import metaInfoFragment from "./queries/fragments/metaInfoFragment.graphql";
+import categoryFragment from './queries/fragments/categoryFragment.graphql'
 
 const GET_HOMEPAGE_DATA = gql`
   ${homepageQuery}
   ${heroFragment}
+  ${categoryFragment}
   ${metaInfoFragment}
 `;
 

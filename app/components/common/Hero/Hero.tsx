@@ -1,8 +1,14 @@
 import { breakpoints } from '@/app/lib/utils/breakpoints';
-import { HeroFragment } from '@/app/lib/types';
+import { Hero } from '@/app/lib/types';
+import { Button } from '../Button/Button';
 
-export const Hero = ({overline, heading, description, heroImage, altText, heroButton}: HeroFragment) => {
-  const { desktopImage, tabletImage, mobileImage } = heroImage;
+interface HeroProps {
+  hero: Hero
+}
+
+export const HeroComponent = ({hero}: HeroProps) => {
+  const { desktopImage, tabletImage, mobileImage } = hero.heroImage;
+  const { link, label, variant } = hero.heroButton;
   return (
     <section>
       <div className="hero">
@@ -11,14 +17,14 @@ export const Hero = ({overline, heading, description, heroImage, altText, heroBu
             <source media={`(min-width: ${breakpoints.large})`} srcSet={desktopImage.url} />    
             <source media={`(min-width: ${breakpoints.medium})`} srcSet={tabletImage.url} />
             <source media={`(min-width: ${breakpoints.small})`} srcSet={mobileImage.url} />
-            <img src={desktopImage.url} alt={altText} />
+            <img src={desktopImage.url} alt={hero.altText} />
           </picture>
         </div>
         <div className="hero__content">
-            <span role='Overline'>{overline}</span>
-            <h1>{heading}</h1>
-            <p>{description}</p>
-            <a href={heroButton.link} className=''>{heroButton.label}</a>
+            <span role='Overline'>{hero.overline}</span>
+            <h1>{hero.heading}</h1>
+            <p>{hero.description}</p>
+            <Button link={link} label={label} variant={variant} />
         </div>
       </div>
     </section>

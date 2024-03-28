@@ -1,22 +1,19 @@
-import { getData } from './lib/graphqlClient';
-import { Homepages } from './lib/types/homepage';
+import { Categories } from './components/common/Categories/Category'
+import { HeroComponent } from './components/common/Hero/Hero'
+import { getData } from './lib/graphqlClient'
+import { HomepageData } from './lib/types/homepage'
 import './styles/globals.scss'
 
-import { Hero } from './components/common/Hero/Hero';
 export default async function Home() {
 
-  const homepage: Homepages = await getData();
-
-  // Destructure the homepage data
-  const { components, slug, pageMeta } = homepage.homepages[0];
-  console.log(components);
-
+  const hygraphData = await getData()
+    const {components, pageMeta} = hygraphData.homepages[0]
   return (
     <main>
-      {components.map(component => (
-        <Hero key={component.id} {...component} />
-      ))
-      }
+      {components.map((component: any) => {
+        if(component.__typename === 'Hero') return <HeroComponent hero={component} key={component.id} />
+        if(component.__typename === 'Category') return <Categories categories={component} key={component.id} />
+      })}
     </main>
   )
-}
+    }

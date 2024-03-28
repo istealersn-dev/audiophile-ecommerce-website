@@ -1,14 +1,16 @@
-import { MetaInfoFragment, HeroFragment } from "./index";
+import { PageMeta } from ".";
 
-export interface Homepages {
-    homepages: [{
-        components: ComponentsProp[];
-        slug: string;
-        pageMeta: MetaInfoFragment;
-    }]
+interface HomepageCompoent {
+  id: string
+  __typename: string // This field indicates the type of component (e.g. "Hero")
 }
 
-interface ComponentsProp {
-    id: string
-    heroProps: HeroFragment;
+interface Homepage {
+  slug: string
+  components: HomepageCompoent[]
+  pageMeta: PageMeta
+}
+
+export interface HomepageData {
+  homepage: Homepage[]
 }
