@@ -15,4 +15,5 @@ fragment ProductCardFragment on ProductCard {
   productImage {
     ...ImageFragment
   }
+  altText
 }

@@ -107,5 +107,6 @@ export interface ContentBanner {
 
 // -----------Heading Component------------------------------------------ //
 export interface Heading {
+  id?: string
   heading: string
 }

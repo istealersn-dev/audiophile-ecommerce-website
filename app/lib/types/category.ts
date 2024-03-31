@@ -7,8 +7,9 @@ interface CategoryPageComponents extends Category, ContentBanner {
 }
 
 interface CategoryPage {
+    id: string
     slug: string
-    heading: Heading
+    categoryHeading: Heading
     productCatalogue: ProductCatalogue[]
     components: CategoryPageComponents[]
 }
