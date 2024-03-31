@@ -1,4 +1,4 @@
-import { Category, FeaturedBanner, Hero, PageMeta } from ".";
+import { Category, ContentBanner, FeaturedBanner, Hero, PageMeta } from ".";
 
 
 /**
@@ -8,7 +8,7 @@ import { Category, FeaturedBanner, Hero, PageMeta } from ".";
  * id: Unique ID for the component
  * __typename: The name of the component type (e.g. "Hero")
  */
-interface HomepageCompoent extends Hero, Category, FeaturedBanner {
+interface HomepageCompoent extends Hero, Category, FeaturedBanner, ContentBanner {
   id: string;
   __typename: string;
 }

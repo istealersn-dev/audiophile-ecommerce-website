@@ -1,0 +1,9 @@
+fragment ContentBannerFragment on ContentBanner {
+    id
+    __typename
+    heading
+    description
+    bannerImage {
+        ...ImageFragment
+    }
+}

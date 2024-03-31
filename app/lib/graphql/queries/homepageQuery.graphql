@@ -4,6 +4,7 @@
         ...HeroFragment
         ...CategoryFragment
         ...FeaturedBannerFragment
+        ...ContentBannerFragment
       }
         slug
         pageMeta {

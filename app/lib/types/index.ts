@@ -70,7 +70,7 @@ export interface Hero {
   overline: string;
 }
 
-// ----------------------------------------------------- //
+// -----------Category Component------------------------------------------ //
 
 export interface Category {
   id: string
@@ -83,6 +83,7 @@ export interface Category {
   }[]
 }
 
+// -----------Featured Banner Component------------------------------------------ //
 export interface FeaturedBanner {
   id?: string
   banners: {
@@ -93,4 +94,18 @@ export interface FeaturedBanner {
     altText: string
     button: Button;
   }[]
+}
+
+// -----------Content Banner Component------------------------------------------ //
+export interface ContentBanner {
+  id?: string
+  heading: string
+  description: string
+  bannerImage: MultiImageProps
+  altText: string
+}
+
+// -----------Heading Component------------------------------------------ //
+export interface Heading {
+  heading: string
 }

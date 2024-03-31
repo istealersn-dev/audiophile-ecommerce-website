@@ -1,0 +1,16 @@
+query Category {
+    templateCategories {
+        id
+        slug
+        categoryHeading {
+            ...CategoryHeadingFragment
+        }
+        productCatalogue {
+            ...ProductCardFragment
+        }
+        components {
+            ...CategoryFragment
+            ...ContentBannerFragment
+        }
+    }
+}

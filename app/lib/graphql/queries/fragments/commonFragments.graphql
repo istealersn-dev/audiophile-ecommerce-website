@@ -1,0 +1,18 @@
+fragment CategoryHeadingFragment on Heading {
+  id
+  heading
+}
+
+fragment ProductCardFragment on ProductCard {
+  id
+  overline
+  imageAlignment
+  heading
+  description
+  button {
+    ...ButtonFragment
+  }
+  productImage {
+    ...ImageFragment
+  }
+}
