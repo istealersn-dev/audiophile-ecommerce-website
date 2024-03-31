@@ -1,30 +1,24 @@
-import { breakpoints } from '@/app/lib/utils/breakpoints';
-import { Hero } from '@/app/lib/types';
-import { Button } from '../Button/Button';
+import { Hero } from "@/app/lib/types";
+import { Button } from "../Button/Button";
+import { MultiImage } from "../MultiImage/MultiImage";
 
 interface HeroProps {
-  hero: Hero
+  hero: Hero;
 }
 
-export const HeroComponent = ({hero}: HeroProps) => {
-  const { desktopImage, tabletImage, mobileImage } = hero.heroImage;
+export const HeroComponent = ({ hero }: HeroProps) => {
   const { link, label, variant } = hero.heroButton;
   return (
     <section>
       <div className="hero">
         <div className="hero__image">
-          <picture>
-            <source media={`(min-width: ${breakpoints.large})`} srcSet={desktopImage.url} />    
-            <source media={`(min-width: ${breakpoints.medium})`} srcSet={tabletImage.url} />
-            <source media={`(min-width: ${breakpoints.small})`} srcSet={mobileImage.url} />
-            <img src={desktopImage.url} alt={hero.altText} />
-          </picture>
+          <MultiImage altText={hero.altText} {...hero.heroImage} />
         </div>
         <div className="hero__content">
-            <span role='Overline'>{hero.overline}</span>
-            <h1>{hero.heading}</h1>
-            <p>{hero.description}</p>
-            <Button link={link} label={label} variant={variant} />
+          <span role="Overline">{hero.overline}</span>
+          <h1>{hero.heading}</h1>
+          <p>{hero.description}</p>
+          <Button {...hero.heroButton} />
         </div>
       </div>
     </section>

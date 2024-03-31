@@ -11,11 +11,15 @@ import homepageQuery from "./queries/homepageQuery.graphql";
 import heroFragment from "./queries/fragments/HeroFragment.graphql";
 import metaInfoFragment from "./queries/fragments/metaInfoFragment.graphql";
 import categoryFragment from './queries/fragments/categoryFragment.graphql'
+import featuredBannerFragment from './queries/fragments/featuredBannerFragment.graphql'
+import sharedFragment from './queries/fragments/sharedFragment.graphql'
 
 const GET_HOMEPAGE_DATA = gql`
   ${homepageQuery}
   ${heroFragment}
   ${categoryFragment}
+  ${featuredBannerFragment}
+  ${sharedFragment}
   ${metaInfoFragment}
 `;
 

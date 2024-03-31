@@ -9,37 +9,35 @@ interface CategoriesProps {
 export const Categories = ({ categories }: CategoriesProps) => {
     return (
         <section>
-            {categories.category.map(card => (
+            {categories.category.map(categoryCard => (
                 <Card 
-                    key={card.id} 
-                    categoryCard={card}
+                    key={categoryCard.id} 
+                    categoryCard={categoryCard}
                     /> 
             ))}
         </section>
     )
 }
 
-// ---- Card Component ----
+// ------------------------ Card Component ------------------------
 
 interface CardProps {
     categoryCard: CategoryInteface["category"][0]
 }
 
 const Card = ({ categoryCard }: CardProps) => {
-
-    const { categoryImage, categoryName, categoryButton } = categoryCard
-    const { link, label, variant } = categoryButton
+  const { categoryImage, categoryName, categoryButton, altText } = categoryCard;
 
   return (
-        <div className="cgory-card">
-         <Image 
-                src={categoryImage.url}
-                alt={categoryImage.alt}
-                width={categoryImage.width}
-                height={categoryImage.height}
-            />
-            <h2>{categoryName}</h2>
-            <Button link={link} label={label} variant={variant} />
-        </div>
-    )
-}
+    <div>
+      <Image
+        src={categoryImage.url}
+        alt={altText}
+        width={categoryImage.width}
+        height={categoryImage.height}
+      />
+      <h2>{categoryName}</h2>
+      <Button {...categoryButton} />
+    </div>
+  );
+};

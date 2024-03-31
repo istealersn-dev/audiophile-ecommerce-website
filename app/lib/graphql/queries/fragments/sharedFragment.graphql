@@ -1,0 +1,18 @@
+fragment ImageFragment on Image {
+  desktopImage {
+    url
+  }
+  mobileImage {
+    url
+  }
+  tabletImage {
+    url
+  }
+}
+
+
+fragment ButtonFragment on Button {
+  label
+  link
+  variant
+}

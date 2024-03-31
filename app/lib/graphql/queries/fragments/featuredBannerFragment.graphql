@@ -1,0 +1,47 @@
+fragment FeaturedBannerFragment on FeaturedBanner {
+    id
+    __typename
+    banners {
+        ...ProductBannerFragment
+        ...CardBannerFragment
+        ...CtaBannerFragment
+    }
+}
+
+
+fragment ProductBannerFragment on ProductBanner {
+    id
+    bannerImage {
+        ...ImageFragment
+    }
+    button {
+        ...ButtonFragment
+    }
+    altText
+    description
+    heading
+}
+
+fragment CardBannerFragment on CardBanner {
+    id
+    altText
+    heading
+    bannerImage {
+        ...ImageFragment
+    }
+    button {
+        ...ButtonFragment
+    }
+}
+
+fragment CtaBannerFragment on CtaBanner {
+    id
+    altText
+    heading
+    bannerImage {
+        ...ImageFragment
+    }
+    button {
+        ...ButtonFragment
+    }
+}

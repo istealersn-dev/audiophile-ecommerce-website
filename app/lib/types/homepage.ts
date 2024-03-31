@@ -1,16 +1,23 @@
-import { PageMeta } from ".";
+import { Category, FeaturedBanner, Hero, PageMeta } from ".";
 
-interface HomepageCompoent {
-  id: string
-  __typename: string // This field indicates the type of component (e.g. "Hero")
+
+/**
+ * HomepageCompoent interface extends Hero, Category and FeaturedBanner
+ * interfaces. It represents a component on the homepage.
+ *
+ * id: Unique ID for the component
+ * __typename: The name of the component type (e.g. "Hero")
+ */
+interface HomepageCompoent extends Hero, Category, FeaturedBanner {
+  id: string;
+  __typename: string;
 }
-
-interface Homepage {
+export interface Homepage {
   slug: string
   components: HomepageCompoent[]
   pageMeta: PageMeta
 }
 
 export interface HomepageData {
-  homepage: Homepage[]
+  homepage: Homepage
 }

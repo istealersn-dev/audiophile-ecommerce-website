@@ -1,8 +1,9 @@
   query Homepage {
-    homepages {
+    homepage (where: {slug: "/"}) {
       components {
         ...HeroFragment
         ...CategoryFragment
+        ...FeaturedBannerFragment
       }
         slug
         pageMeta {

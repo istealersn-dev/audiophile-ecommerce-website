@@ -5,7 +5,7 @@
  */
 import { GraphQLClient } from "graphql-request";
 import GET_HOMEPAGE_DATA from "./graphql/queries";
-import { Homepage } from "./types/homepage";
+import { HomepageData } from "./types/homepage";
 
 // Create a GraphQL client instance
 const endpoint = process.env.HYGRAPH_ENDPOINT;
@@ -14,5 +14,5 @@ const graphQLClient = new GraphQLClient(endpoint!);
 // Execute the query using the GraphQL Client
 export async function getData() {
   const data = await graphQLClient.request(GET_HOMEPAGE_DATA);
-  return data as Homepage;
+  return data as HomepageData;
 }

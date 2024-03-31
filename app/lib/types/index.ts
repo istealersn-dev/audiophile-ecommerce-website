@@ -1,9 +1,34 @@
+
 export interface PageMeta {
     id: string;
     metaDescription: string;
     pageTitle: string;
   }
 
+export interface MultiImageProps {
+  desktopImage: {
+    url: string;
+    width?: number;
+    height?: number;
+  };
+  mobileImage: {
+    url: string;
+    width?: number;
+    height?: number;
+  };
+  tabletImage: {
+    url: string;
+    height?: number;
+    width?: number;
+  };  
+}
+export interface ImageProps {
+    id?: string;
+    height: number;
+    width: number;
+    url: string;
+    alt: string
+  }
 export interface Button {
     id?: string
     label: string;
@@ -35,7 +60,7 @@ export interface HeroImage {
   };
 }
 
-export interface Hero  {
+export interface Hero {
   id: string;
   heroImage: HeroImage;
   altText: string;
@@ -47,20 +72,25 @@ export interface Hero  {
 
 // ----------------------------------------------------- //
 
-export interface ImageProps {
-  id: string;
-  height: number;
-  width: number;
-  url: string;
-  alt: string
-}
-
 export interface Category {
   id: string
   category: {
     id: string
     categoryName: string
     categoryImage: ImageProps
+    altText: string
     categoryButton: Button
+  }[]
+}
+
+export interface FeaturedBanner {
+  id?: string
+  banners: {
+    id: string;
+    heading: string;
+    description?: string;
+    bannerImage: MultiImageProps;
+    altText: string
+    button: Button;
   }[]
 }
