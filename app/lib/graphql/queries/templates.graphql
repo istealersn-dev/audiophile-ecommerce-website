@@ -12,5 +12,8 @@ query Category {
             ...CategoryFragment
             ...ContentBannerFragment
         }
+        pageMeta {
+        ...MetaInfoFragment
+        }
     }
 }

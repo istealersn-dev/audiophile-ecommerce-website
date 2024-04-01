@@ -4,7 +4,6 @@ import { Button } from "../../common/Button/Button";
 
 export const ProductCard = ({ ...ProductCatalogueProps}: ProductCatalogueProps) => {
     const { overline, heading, description, productImage, button, altText, imageAlignment } = ProductCatalogueProps
-    console.log(productImage)
     return (
         <div>
             <div>

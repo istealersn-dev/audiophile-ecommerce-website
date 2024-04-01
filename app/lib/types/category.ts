@@ -1,4 +1,4 @@
-import { Category, ContentBanner, Heading } from "."
+import { Category, ContentBanner, Heading, PageMeta } from "."
 import { ProductCatalogue } from "./productsCatalogue"
 
 interface CategoryPageComponents extends Category, ContentBanner {
@@ -12,6 +12,7 @@ interface CategoryPage {
     categoryHeading: Heading
     productCatalogue: ProductCatalogue[]
     components: CategoryPageComponents[]
+    pageMeta: PageMeta
 }
 
 export interface CategoryPages {

@@ -30,5 +30,6 @@ ${commonFragment}
 ${categoryFragment}
 ${contentBannerFragment}
 ${sharedFragment}
+${metaInfoFragment}
 `
 export { GET_HOMEPAGE_DATA, GET_CATEGORYPAGE_DATA };
