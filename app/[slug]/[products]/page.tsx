@@ -1,57 +1,32 @@
-// import { RelatedProduct } from "@/app/components/product/RelatedProduct/RelatedProduct";
-// import { GET_PRODUCTPAGE_DATA } from "@/app/lib/graphql/queries";
-// import { fetchGraphQL } from "@/app/lib/graphqlClient";
-// import { ProductDetailsPages } from "@/app/lib/types/products";
-// import { notFound } from "next/navigation";
+import { RelatedProduct } from "@/app/components/product/RelatedProduct/RelatedProduct"
+import { GET_PRODUCTPAGE_DATA } from "@/app/lib/graphql/queries"
+import { fetchGraphQL } from "@/app/lib/graphqlClient"
+import { ProductDetailsPage, ProductDetailsPages } from "@/app/lib/types/products"
+import { notFound } from "next/navigation"
 
-// const queryString = GET_PRODUCTPAGE_DATA.loc?.source.body;
 
-// export const dynamicParams = false;
+const queryString = GET_PRODUCTPAGE_DATA.loc?.source.body
 
-// /**
-//  * Generate static parameters based on template product details.
-//  *
-//  * @return {Array} An array of objects with a 'slug' property.
-//  */
-// export async function generateStaticParams() {
-//   const { templateProductDetails } = await fetchGraphQL<ProductDetailsPages>(
-//     queryString!
-//   );
-//   return templateProductDetails.map((product) => ({
-//     slug: product.slug,
-//   }));
-// }
+export const generateParams = async () => {
+    const { templateProductDetails } = await fetchGraphQL<ProductDetailsPages>(queryString!)
+    return templateProductDetails.map((item) => ({ 
+        slug: item.slug,
+        products: item.slug
+    }))
+}
 
-// export default async function ProductDetailPage({
-//   params,
-// }: {
-//   params: { 
-//     slug: string 
-//     products: string
-//   };
-// }) {
-//   const { templateProductDetails } = await fetchGraphQL<ProductDetailsPages>(queryString!);
-  
-//   const product = templateProductDetails.find((product) => product.slug === params.products);
+export default async function ProductDetailPage({ params }: { params: { slug: string, products: string } }) {
 
-//   if (!product) return notFound();
+    const { templateProductDetails } = await fetchGraphQL<ProductDetailsPages>(queryString!, { slug: params.products })
+    const products = templateProductDetails.find((item) => item.slug === params.products);
 
-//   return (
-//     <>
-//       {templateProductDetails.map((item) => (
-//         <main key={item.id}>
-//           {item.components.map((component) => {
-//             if ((component.__typename === 'RelatedProduct'))
-//               return (
-//                 <RelatedProduct
-//                   key={component.id}
-//                   sectionHeading={component.sectionHeading}
-//                   cardGrid={component.cardGrid}
-//                 />
-//               );
-//           })}
-//         </main>
-//       ))}
-//     </>
-//   );
-// }
+    if (!products) return notFound()
+
+    return (
+        <main>
+            {products.components.map((component) => (
+                component.__typename == "RelatedProduct" && <RelatedProduct sectionHeading={component.sectionHeading} cardGrid={component.cardGrid} key={component.id} />
+            ))} 
+        </main>
+    )
+}

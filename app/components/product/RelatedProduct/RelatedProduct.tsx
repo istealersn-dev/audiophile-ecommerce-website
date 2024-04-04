@@ -25,9 +25,9 @@ function Card({ ...CardProps }: CardProps) {
             <div>
                 <Image
                     src={cardImage.url}
+                    width={cardImage.width}
+                    height={cardImage.height}
                     alt={altText}
-                    height={parseInt(cardImage.height)}
-                    width={parseInt(cardImage.width)}
                     />
             </div>
             <h3>{heading}</h3>

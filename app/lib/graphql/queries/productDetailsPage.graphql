@@ -1,0 +1,13 @@
+query ProductDetailsPages {
+    templateProductDetails {
+        id
+        slug
+        components {
+            __typename
+            ...RelatedProductsFragment
+        }
+        pageMeta {
+        ...MetaInfoFragment
+        }
+    }
+}

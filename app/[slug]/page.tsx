@@ -29,7 +29,7 @@ export const dynamicParams = false
 export default async function CategoryPage({params}: {params: {slug: string}}) {
     // This is a React component function for rendering a category page.
     // It receives the 'params' prop, which is an object containing the 'slug' parameter from the URL.
-    const { templateCategories } = await fetchGraphQL<CategoryPages>(queryString!)
+    const { templateCategories } = await fetchGraphQL<CategoryPages>(queryString!, { slug: params.slug })
 
     return (
         <>

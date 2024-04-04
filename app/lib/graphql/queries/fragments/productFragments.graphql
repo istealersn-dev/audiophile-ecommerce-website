@@ -1,0 +1,19 @@
+fragment RelatedProductsFragment on RelatedProduct {
+    id
+    cardGrid {
+        id
+        heading
+        altText
+        cardImage {
+            id
+            url
+            height
+            width
+        }
+        button {
+            label
+            link
+            variant
+        }
+    }
+}

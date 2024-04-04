@@ -4,7 +4,6 @@
  * It imports and combines multiple GraphQL fragments
  */
 import { gql } from "graphql-tag";
-import homepageQuery from "./queries/homepageQuery.graphql";
 import heroFragment from "./queries/fragments/HeroFragment.graphql";
 import metaInfoFragment from "./queries/fragments/metaInfoFragment.graphql";
 import categoryFragment from './queries/fragments/categoryFragment.graphql'
@@ -12,7 +11,11 @@ import featuredBannerFragment from './queries/fragments/featuredBannerFragment.g
 import contentBannerFragment from './queries/fragments/contentBannerFragment.graphql'
 import sharedFragment from './queries/fragments/sharedFragment.graphql'
 import commonFragment from './queries/fragments/commonFragments.graphql'
+import productFragments from './queries/fragments/productFragments.graphql'
+
+import homepageQuery from "./queries/homepageQuery.graphql";
 import templates from './queries/templates.graphql'
+import productDetailsPage from './queries/productDetailsPage.graphql'
 
 const GET_HOMEPAGE_DATA = gql`
   ${homepageQuery}
@@ -32,4 +35,11 @@ ${contentBannerFragment}
 ${sharedFragment}
 ${metaInfoFragment}
 `
-export { GET_HOMEPAGE_DATA, GET_CATEGORYPAGE_DATA };
+
+const GET_PRODUCTPAGE_DATA = gql`
+${productDetailsPage}
+${productFragments}
+${metaInfoFragment}
+`
+
+export { GET_HOMEPAGE_DATA, GET_CATEGORYPAGE_DATA, GET_PRODUCTPAGE_DATA };
