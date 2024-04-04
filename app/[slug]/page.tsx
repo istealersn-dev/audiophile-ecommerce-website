@@ -8,9 +8,6 @@ import { fetchGraphQL } from "../lib/graphqlClient"
 import { CategoryPages } from "../lib/types/category"
 
 const queryString = GET_CATEGORYPAGE_DATA.loc?.source.body
-// const { templateCategories } = await fetchGraphQL<CategoryPages>(queryString!)
-
-export const dynamicParams = false
 /**
  * Generates static params for all categories.
  * This function retrieves the category pages data from the GraphQL API,
@@ -26,6 +23,8 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
         slug: category.slug,
     }));
 }
+export const dynamicParams = false
+
 
 export default async function CategoryPage({params}: {params: {slug: string}}) {
     // This is a React component function for rendering a category page.
