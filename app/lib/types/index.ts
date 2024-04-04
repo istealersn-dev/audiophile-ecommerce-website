@@ -6,6 +6,7 @@ export interface PageMeta {
   }
 
 export interface MultiImageProps {
+  id?: string;
   desktopImage: {
     url: string;
     width?: number;
@@ -73,7 +74,7 @@ export interface Hero {
 // -----------Category Component------------------------------------------ //
 
 export interface Category {
-  id: string
+  id?: string
   category: {
     id: string
     categoryName: string

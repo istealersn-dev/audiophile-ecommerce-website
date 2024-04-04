@@ -38,7 +38,9 @@ ${metaInfoFragment}
 
 const GET_PRODUCTPAGE_DATA = gql`
 ${productDetailsPage}
+${categoryFragment}
 ${productFragments}
+${contentBannerFragment}
 ${metaInfoFragment}
 `
 

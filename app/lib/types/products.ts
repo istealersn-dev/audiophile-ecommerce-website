@@ -1,4 +1,4 @@
-import { Button, ImageProps, MultiImageProps } from "."
+import { Button, Category, ContentBanner, ImageProps, MultiImageProps, PageMeta } from "."
 
 export interface CardProps {
     id: string
@@ -23,7 +23,7 @@ export interface ProductShowcase {
 
 // -------------------------- types for Product Details Page --------------------------
 
-export interface ProductDetailsPageComponents extends RelatedProductsProps {
+export interface ProductDetailsPageComponents extends RelatedProductsProps, Category, ContentBanner, ProductShowcase {
     id?: string
     __typename: string
 }
@@ -32,6 +32,7 @@ export interface ProductDetailsPage {
     id: string
     slug: string
     components: ProductDetailsPageComponents[]
+    pageMeta: PageMeta
 }
 
 export interface ProductDetailsPages {

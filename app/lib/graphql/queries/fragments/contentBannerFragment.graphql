@@ -4,6 +4,18 @@ fragment ContentBannerFragment on ContentBanner {
     heading
     description
     bannerImage {
-        ...ImageFragment
+        ...ImagesFragment
     }
+}
+
+fragment ImagesFragment on Image {
+  desktopImage {
+    url
+  }
+  mobileImage {
+    url
+  }
+  tabletImage {
+    url
+  }
 }

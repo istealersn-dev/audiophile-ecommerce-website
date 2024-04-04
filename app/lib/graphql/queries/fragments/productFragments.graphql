@@ -17,3 +17,24 @@ fragment RelatedProductsFragment on RelatedProduct {
         }
     }
 }
+
+fragment ProductShowcaseFragment on ProductShowcase {
+    id
+    altText
+    productGalleryImages {
+        id
+        ...ImagesArrayFragment
+    }
+}
+
+fragment ImagesArrayFragment on Image {
+    desktopImage {
+        url
+    }
+    mobileImage {
+        url
+    } 
+    tabletImage {
+        url
+    }
+}

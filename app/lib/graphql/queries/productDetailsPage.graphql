@@ -5,6 +5,9 @@ query ProductDetailsPages {
         components {
             __typename
             ...RelatedProductsFragment
+            ...CategoryFragment
+            ...ContentBannerFragment
+            ...ProductShowcaseFragment
         }
         pageMeta {
         ...MetaInfoFragment
