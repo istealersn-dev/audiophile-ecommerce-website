@@ -1,5 +1,16 @@
 import { Button, Category, ContentBanner, ImageProps, MultiImageProps, PageMeta } from "."
 
+export interface AddToCartProps {
+    id?: string
+    overline?: string
+    heading: string
+    description: string
+    price: string
+    productImages: MultiImageProps
+    altText: string
+    button: Button
+}
+
 export interface CardProps {
     id: string
     heading: string
@@ -23,7 +34,7 @@ export interface ProductShowcase {
 
 // -------------------------- types for Product Details Page --------------------------
 
-export interface ProductDetailsPageComponents extends RelatedProductsProps, Category, ContentBanner, ProductShowcase {
+export interface ProductDetailsPageComponents extends AddToCartProps, RelatedProductsProps, Category, ContentBanner, ProductShowcase {
     id?: string
     __typename: string
 }

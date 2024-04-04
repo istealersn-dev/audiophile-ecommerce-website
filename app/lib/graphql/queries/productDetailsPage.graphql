@@ -4,6 +4,7 @@ query ProductDetailsPages {
         slug
         components {
             __typename
+            ...AddToCartFragment
             ...RelatedProductsFragment
             ...CategoryFragment
             ...ContentBannerFragment

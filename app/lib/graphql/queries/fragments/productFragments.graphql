@@ -1,3 +1,20 @@
+fragment AddToCartFragment on AddToCart {
+    id
+    overline
+    heading
+    description
+    price
+    productImages {
+        ...ImagesArrayFragment
+    }
+    altText
+    button {
+      label
+      link
+      variant
+    }
+}
+
 fragment RelatedProductsFragment on RelatedProduct {
     id
     cardGrid {

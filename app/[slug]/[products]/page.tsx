@@ -1,5 +1,6 @@
 import { Categories } from "@/app/components/common/Categories/Category"
 import { ContentBanner } from "@/app/components/common/ContentBanner/ContentBanner"
+import { AddToCart } from "@/app/components/product/AddToCart/AddToCart"
 import { ProductShowcase } from "@/app/components/product/ProductShowcase/ProductShowcase"
 import { RelatedProduct } from "@/app/components/product/RelatedProduct/RelatedProduct"
 import { GET_PRODUCTPAGE_DATA } from "@/app/lib/graphql/queries"
@@ -49,6 +50,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
              * the related product component if the component type is 'RelatedProduct'.
              */}
             {products.components.map((component) => {
+                if(component.__typename === 'AddToCart') return <AddToCart key={component.id} {...component}/>
                 if(component.__typename === "ProductShowcase") return <ProductShowcase key={component.id} altText={component.altText} productGalleryImages={component.productGalleryImages}/>
                 if(component.__typename === "RelatedProduct") return <RelatedProduct sectionHeading={component.sectionHeading} cardGrid={component.cardGrid} key={component.id}/>
                 if(component.__typename === 'Category') return <Categories categories={component} key={component.id} />
