@@ -34,14 +34,11 @@ export const getPricing = (productType: ProductType, productName: ProductName) =
  *
  * @returns The formatted price of the product in USD as a string
  */
-export const getformattedPricing = (value: string): string | undefined => {
-    // Return undefined if the input is empty
+export const getformattedPricing = (value: string) => {
     if (!value) return undefined
 
     // Split the product name to get its type
     const productType = value.split('_').pop()?.toLowerCase() as ProductType // Use type assertion to ensure that the type is ProductType
-
-    // Get the price of the product by its name and type
     const priceValue = productPricing[productType][value]
 
     // Format the price to a USD currency string
@@ -50,5 +47,5 @@ export const getformattedPricing = (value: string): string | undefined => {
         currency: 'USD',
         // Ensure that there is no decimal places
         minimumFractionDigits: 0,
-    }).format(Number(priceValue))
+    }).format(Number(priceValue)) as string
 }

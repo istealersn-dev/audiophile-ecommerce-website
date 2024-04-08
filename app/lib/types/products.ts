@@ -25,6 +25,15 @@ export interface RelatedProductsProps {
     cardGrid: CardProps[]
 }
 
+export interface ProductSummaryProps {
+    id?: string
+    productFeatures: string
+    packageIncludes: {
+        html?: string
+        raw?: string
+    }
+}
+
 export interface ProductShowcase {
     id?: string
     altText: string
@@ -34,7 +43,7 @@ export interface ProductShowcase {
 
 // -------------------------- types for Product Details Page --------------------------
 
-export interface ProductDetailsPageComponents extends AddToCartProps, RelatedProductsProps, Category, ContentBanner, ProductShowcase {
+export interface ProductDetailsPageComponents extends AddToCartProps, ProductSummaryProps, RelatedProductsProps, Category, ContentBanner, ProductShowcase {
     id?: string
     __typename: string
 }

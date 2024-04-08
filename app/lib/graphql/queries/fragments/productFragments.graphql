@@ -35,6 +35,14 @@ fragment RelatedProductsFragment on RelatedProduct {
     }
 }
 
+fragment ProductSummaryFragment on ProductSummary {
+    id
+    productFeatures
+    packageIncludes {
+        html
+    }
+}
+
 fragment ProductShowcaseFragment on ProductShowcase {
     id
     altText

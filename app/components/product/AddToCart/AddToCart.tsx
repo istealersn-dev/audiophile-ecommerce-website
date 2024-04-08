@@ -8,7 +8,7 @@ export const AddToCart = ({...AddToCartProps}: AddToCartProps) => {
 
     const { overline, heading, description, price, productImages, altText, button } = AddToCartProps
 
-    const priceValue = getformattedPricing(price) // Returns the formatted price of the product
+    const priceValue = getformattedPricing(price) // Returns the price of the product in USD as a string
     return (
         <section>
             <div>

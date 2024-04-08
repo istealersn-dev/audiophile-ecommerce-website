@@ -1,7 +1,19 @@
-export const ProductSummary = () => {
+import { ProductSummaryProps } from "@/app/lib/types/products"
+
+export const ProductSummary = ({...ProductSummaryProps}: ProductSummaryProps) => {
+
+    const { productFeatures, packageIncludes } = ProductSummaryProps
+
     return (
-        <div>
-            <h2>Product Summary</h2>
-        </div>
+        <section>
+            <div>
+                <div>
+                    <h2>FEATURES</h2>
+                    <p>{productFeatures}</p>
+                </div>
+                <div dangerouslySetInnerHTML={{__html: packageIncludes.html!}}>
+                </div>
+            </div>
+        </section>
     )
 }

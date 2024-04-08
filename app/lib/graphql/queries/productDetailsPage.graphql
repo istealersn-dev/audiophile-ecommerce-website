@@ -5,6 +5,7 @@ query ProductDetailsPages {
         components {
             __typename
             ...AddToCartFragment
+            ...ProductSummaryFragment
             ...RelatedProductsFragment
             ...CategoryFragment
             ...ContentBannerFragment

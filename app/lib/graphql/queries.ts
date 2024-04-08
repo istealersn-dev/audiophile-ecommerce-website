@@ -1,5 +1,5 @@
 /**
- * GET_HOMEPAGE_DATA is a GraphQL query that fetches data needed for the homepage.
+ * GET_****_DATA is a GraphQL query that fetches data needed for the respective template such as Homepage, Category Page, Product Page.
  *
  * It imports and combines multiple GraphQL fragments
  */
@@ -13,6 +13,7 @@ import sharedFragment from './queries/fragments/sharedFragment.graphql'
 import commonFragment from './queries/fragments/commonFragments.graphql'
 import productFragments from './queries/fragments/productFragments.graphql'
 
+import layout from "./queries/layout.graphql"
 import homepageQuery from "./queries/homepageQuery.graphql";
 import templates from './queries/templates.graphql'
 import productDetailsPage from './queries/productDetailsPage.graphql'
@@ -44,4 +45,13 @@ ${contentBannerFragment}
 ${metaInfoFragment}
 `
 
-export { GET_HOMEPAGE_DATA, GET_CATEGORYPAGE_DATA, GET_PRODUCTPAGE_DATA };
+const GET_HEADER_AND_FOOTER_DATA = gql`
+${layout}
+`
+
+export { 
+  GET_HEADER_AND_FOOTER_DATA, 
+  GET_HOMEPAGE_DATA, 
+  GET_CATEGORYPAGE_DATA, 
+  GET_PRODUCTPAGE_DATA 
+};

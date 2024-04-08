@@ -1,0 +1,40 @@
+fragment HeaderFragment on Header {
+    id
+    companyLogo {
+        url
+        width
+        height
+    }
+    navBarItems {
+        id
+        label
+        link
+    }
+    }
+
+
+fragment FooterFragment on Footer {
+    id
+    companyLogo {
+        url
+        width
+        height
+    }
+    footerItems {
+        id
+        label
+        link
+    }
+    socialChannels
+    summary
+    copyright
+  }
+
+  query Layout {
+    header (where: {id: "cluqw4um4385307ppqyngixh8"}) {
+        ...HeaderFragment
+    }
+    footer (where: {id: "cluqwifcq387607o79ftaa5wu"}) {
+        ...FooterFragment
+    }
+  }
