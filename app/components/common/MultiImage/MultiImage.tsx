@@ -21,7 +21,7 @@ export const MultiImage = ({ altText, ...MultiImageProps }: MultiImages) => {
         media={`(min-width: ${breakpoints.small})`}
         srcSet={mobileImage.url}
       />
-      <img src={desktopImage.url} alt={altText} />
+      <img src={desktopImage.url} alt={altText} loading="lazy"/>
     </picture>
   );
 };

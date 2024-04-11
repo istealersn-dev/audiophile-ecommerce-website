@@ -1,0 +1,6 @@
+// Define the mixin with a parameter for the breakpoint
+@mixin responsive($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}

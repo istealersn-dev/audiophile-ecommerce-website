@@ -1,14 +1,18 @@
 @use '../../../styles/variables.scss' as *;
 
 .primary {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     a {
         background-color: $primaryColor;
         color: $white;
         font-size: $font-size-subtitle;
         font-weight: $font-bold;
+        line-height:  1.3846;
         letter-spacing: $letter-spacing-subtitle;
+        text-transform: uppercase;
         padding: .9375rem 1.8438rem .9375rem 1.9688rem;
 
         &:hover {
@@ -16,12 +20,12 @@
             color: $white;
         }
     }
-
-    text-transform: uppercase;
 }
 
 .outline {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     a {
         background-color: transparent;
@@ -41,7 +45,9 @@
 }
 
 .link {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     a {
         background-color: transparent;

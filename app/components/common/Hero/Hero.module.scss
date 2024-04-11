@@ -1,0 +1,81 @@
+@use '@/app/styles/variables.scss' as *;
+@use '@/app/styles/mixins.scss' as *;
+
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    &__image {
+        width: 100vw;
+        height: auto;
+        max-height: 100vh;
+
+        @include responsive($breakpoint-lg) {
+            width: 90rem;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        top: 57%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: calc(100vw - 2.9375rem);
+
+        @include responsive(calc($breakpoint-md - 23rem)) {
+            top: 53%;
+            width: 23.6875rem;
+        }
+
+        @include responsive($breakpoint-lg) {
+            text-align: left;
+            left: calc((100vw - 69.375rem) / 2);
+            transform: translate(0, -50%);
+
+            div {
+                justify-content: flex-start;
+            }
+        }
+
+        &__overline {
+            display: inline-block;
+            font-size: $font-size-overline;
+            line-height: $line-height-overline;
+            letter-spacing: $letter-spacing-overline;
+            text-transform: uppercase;
+            color: $white;
+            opacity: 49.64%;
+            margin-bottom: 1rem;
+
+            @include responsive($breakpoint-md) {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        h1 {
+            font-size: $font-size-h1;
+            line-height: $line-height-h1;
+            letter-spacing: $letter-spacing-h1;
+            font-weight: $font-bold;
+            color: $white;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: $font-size-body;
+            line-height: $line-height-body;
+            font-weight: $font-medium;
+            color: $white;
+            opacity: 0.75;
+            margin-bottom: 1.75rem;
+
+            @include responsive($breakpoint-md) {
+                max-width: 21.8125rem;
+                margin-bottom: 2.5rem;
+            }
+        }
+    }
+}

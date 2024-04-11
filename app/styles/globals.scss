@@ -11,7 +11,7 @@
 html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
-  text-size-adjust: none;
+  box-sizing: border-box;
 }
 
 /* Remove default margin in favour of better control in authored CSS */
@@ -28,7 +28,11 @@ ol[role='list'] {
 
 /* Set core body defaults */
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   min-height: 100vh;
+  box-sizing: inherit;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -79,4 +83,10 @@ textarea:not([rows]) {
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 5ex;
+}
+
+.container {
+  width: 100%;
+  max-width: $max-width;
+  margin-inline: auto;
 }
